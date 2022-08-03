@@ -1,21 +1,32 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { useContext, useEffect } from 'react';
+import { ExpenseLogsContext } from './context/ExpenseContext'
+import { ExpenseLogsContextContainer } from './context/ExpenseContextContainer';
+import { ToolbarExpenses } from './components/Toolbar/Toolbar';
+import { ExpensesTable } from './components/Table/Table';
+import { FormDialog } from './components/CreateExpense/CreateExpense';
 
-function App() {
-  const [data, setData] = React.useState(null);
+export const App = () => {
+  const { expenseLogs, updateContextValue } = useContext(ExpenseLogsContext);
 
-  React.useEffect(() => {
-    fetch("/users")
-    .then((response) => response.json())
-    .then((data) => setData(data));
-  }, []);
-  
+  const {
+    data,
+    createModalOpen,
+  } = expenseLogs;
+
   return (
-    <div className="App">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>{!data ? "Loading..." : data}</p>
-    </div>
+    <ExpenseLogsContextContainer>
+       <>
+          <FormDialog />
+          <ToolbarExpenses />
+          <ExpensesTable />
+        </>
+      {/* {data && data.length ?
+        <>
+          <FormDialog />
+          <ToolbarExpenses />
+          <ExpensesTable />
+        </>
+        : null} */}
+    </ExpenseLogsContextContainer>
   );
 }
-export default App;
