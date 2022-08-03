@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import { ExpenseLogsContext } from '../../context/ExpenseContext'
+import React, { useState } from 'react';
+// import { ExpenseLogsContext } from '../../context/ExpenseContext'
 import { styled, alpha } from '@mui/material/styles';
 import {
   AppBar,
@@ -60,12 +60,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export const ToolbarExpenses = () => {
-  const { expenseLogs, updateContextValue } = useContext(ExpenseLogsContext);
+  // const { expenseLogs, updateContextValue } = useContext(ExpenseLogsContext);
 
-  const {
-    data,
-    createModalOpen,
-  } = expenseLogs;
+  // const {
+  //   data,
+  //   createModalOpen,
+  // } = expenseLogs;
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState<null | HTMLElement>(null);

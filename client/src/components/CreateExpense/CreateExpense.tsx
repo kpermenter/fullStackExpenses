@@ -19,7 +19,7 @@ export const FormDialog = () => {
   const [value, setValue] = useState<Date | null>(new Date('2014-08-18T21:11:54'));
 
   const {
-    data,
+    // data,
     createModalOpen,
   } = expenseLogs;
 

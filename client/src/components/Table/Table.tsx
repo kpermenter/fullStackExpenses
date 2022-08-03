@@ -3,11 +3,10 @@ import { ExpenseLogsContext } from '../../context/ExpenseContext'
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 
 export const ExpensesTable = () => {
-  const { expenseLogs, updateContextValue } = useContext(ExpenseLogsContext);
+  const { expenseLogs } = useContext(ExpenseLogsContext);
 
   const {
     data,
-    createModalOpen,
   } = expenseLogs;
 
   return (

@@ -13,9 +13,9 @@ interface props {}
 export const ExpenseLogsProvider = ({ children }: React.PropsWithChildren<props>) => {
   const [expenseLogs, setExpenseLogs] = useState<ExpenseLogsValues>(defaultExpenseLogs);
 
-  const {
-    data,
-  } = expenseLogs;
+  // const {
+  //   data,
+  // } = expenseLogs;
 
   useEffect(() => {
     const FetchExpenseLogs = async () => {
